@@ -1,0 +1,13 @@
+<div class="card mb-3">
+    <div class="card-block">
+        <p>
+            <img [src]="media.images.standard_resolution.url" (dblclick)="toggleLike()" (click)="showBig()" />
+        </p>
+        <form class="form-inline">
+            <button [@likeState]="likeState()" class="btn btn-secondary" (click)="toggleLike()">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </button>
+            <input type="text" class="form-control ml-2" placeholder="Comment" #input (keyup.enter)="writeComment(input.value)">
+        </form>
+    </div>
+</div>

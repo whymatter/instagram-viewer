@@ -1,0 +1,26 @@
+<div class="inner-addon left-addon">
+    <!--<i class="fa fa-search" aria-hidden="true"></i>
+    <input (focus)="blured=false" (blur)="blured=true" type="text" class="form-control" #input (keyup)="search(input.value)"
+    />-->
+
+    <div class="icon-addon addon-lg">
+        <input (focus)="blured=false" (blur)="blured=true" type="text" class="form-control" #input (keyup)="search(input.value)"
+            placeholder="Search" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <!--<label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>-->
+    </div>
+
+</div>
+
+<ul class="list-group" *ngIf="!blured">
+    <li class="list-group-item list-group-item-info" *ngIf="users && users.length">Users</li>
+
+    <a #u (mousedown)="u.click()" [routerLink]="['/feed/user', user.id]" class="list-group-item list-group-item-action" *ngFor="let user of users">{{user.username}}</a>
+
+    <li class="list-group-item list-group-item-info" *ngIf="tags && tags.length">Tags</li>
+
+    <a #u (mousedown)="u.click()" [routerLink]="['/feed/tag', tag.name]" class="list-group-item list-group-item-action justify-content-between"
+        *ngFor="let tag of tags">
+        {{tag.name}}<span class="badge badge-pill badge-default">{{tag.media_count}}</span>
+        </a>
+</ul>

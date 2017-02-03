@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+.modal-dialog{
+    top: 50%;
+    transform: translateY(-50%) !important;
+    max-width: initial !important;
+    margin: 10px !important;
+}
